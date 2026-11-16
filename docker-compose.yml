@@ -1,0 +1,9 @@
+services:
+  docker-server-logger:
+    build: .
+    container_name: docker-server-logger
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
